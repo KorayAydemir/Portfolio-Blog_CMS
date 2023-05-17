@@ -1,7 +1,10 @@
+import React from 'react'
+
 export default {
     name: 'comment',
     type: 'document',
     title: 'Comment',
+    liveEdit: true,
     fields: [
         {
             name: 'name',
@@ -40,13 +43,14 @@ export default {
             type: 'string',
         },
         {
-            name: 'children',
+            name: 'replies',
             type: 'array',
             title: 'Children',
             of: [
                 {
                     type: 'reference',
                     to: [{type: 'comment'}],
+                    weak: true,
                 },
             ],
         },
